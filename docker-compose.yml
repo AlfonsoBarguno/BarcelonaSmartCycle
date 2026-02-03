@@ -1,0 +1,18 @@
+
+
+services:
+  postgres:
+    image: postgis/postgis:15-3.4
+    container_name: barcelona-smartcycle-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: smartcycle
+      POSTGRES_USER: smartcycle
+      POSTGRES_PASSWORD: smartcycle
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
